@@ -1,1 +1,13 @@
 <p>Mfe1 todo works!</p>
+<div class="req-group">
+    <input
+      type="text"
+      class="form-control"
+      name="requestMessage"
+      placeholder="message to Microfrontend 2"
+      [(ngModel)]="requestMessage"
+    />
+    <button type="button" (click)="sendReq()">
+      Send Data to Microfrontends 
+    </button>
+  </div>

@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-todo',
@@ -7,10 +8,16 @@ import {Component, OnInit} from '@angular/core';
 })
 export class TodoComponent implements OnInit {
 
-    constructor() {
+    requestMessage: string = '';
+
+    constructor(private router: Router) {
     }
 
     ngOnInit(): void {
     }
-
+    sendReq() {
+        this.router.navigate(['mfe2'], {
+          queryParams: { messageText: this.requestMessage },
+        });
+      }
 }
